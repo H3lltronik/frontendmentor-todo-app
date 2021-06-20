@@ -1,0 +1,141 @@
+.todos {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+.todo-content {
+    margin-left: 25px;
+    width: 100%; height: 100%;
+    border: none; outline: none;
+    background-color: transparent;
+}
+
+.todo {
+    cursor: grab;
+    padding: 25px 20px;
+    background-color: var(--very-dark-desaturated-blue);
+}
+
+.todo__input {
+    cursor: unset;
+    margin-top: 50px;
+    border-radius: 7px;
+}
+
+.todo-wrapper {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: start;
+}
+
+.todo-text {
+    font-size: 25px;
+    color: var(--light-grayish-blue);
+    font-family: "JosefinSans-Regular";
+}
+
+.todo__checked .todo-circle::after {
+    width: 0; height: 0;
+}
+.todo__checked .todo-circle-marker {
+    display: block;
+}
+
+.todos-box {
+    overflow: hidden;
+    margin-top: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--very-dark-desaturated-blue);
+}
+
+.todos-box > * {
+    border-bottom: 1px solid var(--very-dark-grayish-blue1);
+}
+
+.todos-box-footer {
+    display: flex;
+    font-size: 19px;
+    padding: 20px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todos-box-option {
+    cursor: pointer;
+    color: var(--very-dark-grayish-blue);
+}
+
+.todos-box-option__active, .todos-box-option__active:hover {
+    color: var(--bright-blue) !important;
+}
+
+.todos-box-option:hover {
+    color: var(--light-grayish-blue-hover);
+}
+
+.todos-box-options :nth-child(2n+1) {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.todos-box-information {
+    font-size: 16px;
+    color: var(--very-dark-grayish-blue);
+}
+
+/* circle */
+
+.todo-circle, .todo-circle::before {
+    border-radius: 100%;
+}
+
+.todo-circle {
+    position: relative;
+    width: var(--todo-circle-size); 
+    height: var(--todo-circle-size);
+}
+
+.todo-circle::before, .todo-circle::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+}
+
+.todo-circle::before {
+    z-index: 1;
+    margin: -2px;
+    background: var(--gradient);
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.todo-circle__input::before {
+    background: var(--dark-grayish-blue);
+}
+
+.todo-circle::after {
+    z-index: 2;
+    width: 100%; height: 100%;
+    background: var(--very-dark-desaturated-blue);
+}
+
+.todo-circle-marker {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 70%; height: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.icon {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../images/icon-check.svg');
+}
+
+.check-icon {
+    background-image: url('../images/icon-check.svg');
+}

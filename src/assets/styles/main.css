@@ -1,0 +1,111 @@
+@import url('../fonts/stylesheet.css');
+@import url('./components.css');
+
+:root[data-theme="theme-light"] {
+    /* - Very Light Gray: hsl(0, 0%, 98%)
+    - Very Light Grayish Blue: hsl(236, 33%, 92%)
+    - Light Grayish Blue: hsl(233, 11%, 84%)
+    - Dark Grayish Blue: hsl(236, 9%, 61%)
+    - Very Dark Grayish Blue: hsl(235, 19%, 35%) */
+}
+
+:root[data-theme="theme-dark"] {
+    --very-dark-blue: hsl(235, 21%, 11%);
+    --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+    --light-grayish-blue: hsl(234, 39%, 85%);
+    --light-grayish-blue-hover: hsl(236, 33%, 92%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --very-dark-grayish-blue: hsl(233, 14%, 35%);
+    --very-dark-grayish-blue1: hsl(237, 14%, 26%);
+}
+
+:root {
+    --todo-circle-size: 25px;
+    --bright-blue: hsl(220, 98%, 61%);
+    --gradient: linear-gradient(90deg, rgba(87,221,255,1) 0%, rgba(192,88,243,1) 100%);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    min-width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+}
+
+.page-header {
+    height: 40vh;
+}
+
+.background-center {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.page-header[data-theme="theme-dark"] {
+    background-image: url('../images/bg-desktop-dark.jpg');
+}
+.page-header[data-theme="theme-light"] {
+    background-image: url('../images/bg-desktop-light.jpg');
+}
+
+@media (max-width: 750px) {
+    .page-header[data-theme="theme-dark"] {
+        background-image: url('../images/bg-mobile-dark.jpg');
+    }
+    .page-header[data-theme="theme-light"] {
+        background-image: url('../images/bg-mobile-light.jpg');
+    }
+}
+
+.page-bottom {
+    flex: 1;
+    background-color: var(--very-dark-blue);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    color: white;
+    font-size: 70px;
+    letter-spacing: 10px;
+    font-family: "JosefinSans-Medium";
+}
+
+.theme-switcher {
+    cursor: pointer;
+    margin: 0; padding: 0;
+    width: 50px; height: 50px;
+    outline: none; border: none;
+    background-color: transparent;
+}
+
+.theme-switcher[data-theme="theme-light"] {
+    background-image: url('../images/icon-moon.svg');
+}
+
+.theme-switcher[data-theme="theme-dark"] {
+    background-image: url('../images/icon-sun.svg');
+}
+
+.container {
+    width: 95vw;
+    max-width:  750px;
+}
+
+.centered {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
